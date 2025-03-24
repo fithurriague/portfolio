@@ -70,7 +70,8 @@ func NewServer() (server *Server, err error) {
 func (server *Server) loadRoutes() (err error) {
 	server.Router.GET("/swagger/*", echoSwagger.WrapHandler)
 
-	server.Router.Static("/css", "public/assets/css")
+	server.Router.Static("/css", "dist/css/")
+	server.Router.Static("/js", "dist/js/")
 
 	server.Router.GET("/source/:filename", func(c echo.Context) error {
 		fileName := c.Param("filename")

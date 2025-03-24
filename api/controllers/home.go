@@ -21,7 +21,7 @@ import (
 func Home(templates map[string]*template.Template) func(c echo.Context) error {
 	return func(c echo.Context) error {
 		// This works because a map works with a pointer under the hood
-		templates["home.html"] = template.Must(template.ParseFiles("public/views/home.html", "public/layouts/base.html"))
+		templates["home.html"] = template.Must(template.ParseFiles("dist/views/home.html", "dist/layouts/base.html"))
 
 		return c.Render(http.StatusOK, "home.html", map[string]any{
 			"name": "Ithurriague Francisco",

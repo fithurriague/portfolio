@@ -1,7 +1,7 @@
 all:run
 
 run: 
-	go run cmd/main.go
+	npm run build && go run cmd/main.go
 
 test:
 	go test -v cmd/main.go

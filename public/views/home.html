@@ -7,13 +7,13 @@
 <h1>{{index . "name"}}</h1>
 <h2>{{index . "rol"}}</h2>
 
-<pre><code id="code-block" class="language-go" hx-get="/source/cmd/main.go" hx-trigger="load" hx-swap="innerHTML"></code></pre>
-
+<pre><code id="code-block" class="language-go" hx-get="/source/api/server.go" hx-trigger="load" hx-swap="innerHTML"></code></pre>
 
 <!-- HIGHLIGHT CODE AFTER SWAP -->
 <script>
   document.addEventListener("htmx:afterSwap", function () {
     const codeBlock = document.getElementById("code-block");
+    codeBlock.style.tabSize = "4";
     codeBlock.removeAttribute("data-highlighted");
     hljs.highlightElement(codeBlock);
   });

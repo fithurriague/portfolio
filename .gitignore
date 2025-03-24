@@ -16,6 +16,11 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+node_modules/
+
+# Out directories
+build/
+dist/
 
 # Go workspace file
 go.work
