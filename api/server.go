@@ -2,10 +2,12 @@ package api
 
 import (
 	"errors"
+	"fmt"
 	"html/template"
 	"io"
-	"net/http"
 	"os"
+	"path/filepath"
+	"strings"
 
 	"github.com/fithurriague/portfolio/api/controllers"
 	"github.com/labstack/echo/v4"
@@ -13,8 +15,8 @@ import (
 	"github.com/rs/zerolog"
 	"golang.org/x/time/rate"
 
-	echoSwagger "github.com/swaggo/echo-swagger"
 	_ "github.com/fithurriague/portfolio/docs"
+	echoSwagger "github.com/swaggo/echo-swagger"
 )
 
 type TemplateRegistry struct {
@@ -67,23 +69,20 @@ func NewServer() (server *Server, err error) {
 	return server, nil
 }
 
+func (server *Server) Static(prefix string, folders ...string) {
+	for _, path := range folders {
+		path = filepath.Clean(path)
+		path = strings.TrimSpace(path)
+		server.Router.Static(fmt.Sprintf("%s/%s/", prefix, path), path)
+	}
+}
+
 func (server *Server) loadRoutes() (err error) {
-	server.Router.GET("/swagger/*", echoSwagger.WrapHandler)
+	server.Static("", "dist/css", "dist/js", "dist/assets")
 
-	server.Router.Static("/css", "dist/css/")
-	server.Router.Static("/js", "dist/js/")
-
-	server.Router.GET("/source/:filename", func(c echo.Context) error {
-		fileName := c.Param("filename")
-
-		data, err := os.ReadFile(fileName)
-		if err != nil {
-			return echo.NewHTTPError(http.StatusNotFound, "File not found")
-		}
-
-		c.Response().Header().Set("Content-Type", "text/plain")
-		return c.String(http.StatusOK, string(data))
-	})
+	allowedEnv := os.Getenv("ALLOWED_FOLDERS")
+	allowed := strings.Split(allowedEnv, ",")
+	server.Static("source", allowed...)
 
 	templates := make(map[string]*template.Template)
 
@@ -92,6 +91,8 @@ func (server *Server) loadRoutes() (err error) {
 	server.Router.Renderer = &TemplateRegistry{
 		templates: templates,
 	}
+
+	server.Router.GET("/swagger/*", echoSwagger.WrapHandler)
 
 	return nil
 }

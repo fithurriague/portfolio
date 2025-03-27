@@ -4,6 +4,7 @@ import (
 	"log"
 
 	"github.com/fithurriague/portfolio/api"
+	"github.com/joho/godotenv"
 )
 
 //	@title			Swagger Example API
@@ -24,6 +25,11 @@ import (
 //	@externalDocs.description	OpenAPI
 //	@externalDocs.url			https://swagger.io/resources/open-api/
 func main() {
+	err := godotenv.Load(".env")
+	if err != nil {
+		log.Fatalf("loading env variables: %s", err.Error())
+	}
+
 	server, err := api.NewServer()
 	if err != nil {
 		log.Fatalf("error setting up the server: %s", err.Error())

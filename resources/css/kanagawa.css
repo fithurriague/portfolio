@@ -1,0 +1,49 @@
+:root {
+  /* FOREGROUND */
+  --kanagawa-default-foreground: #dcd7ba;
+  --kanagawa-dark-foreground: #c8c093;
+  --kanagawa-darker-foreground: #54546d;
+  --kanagawa-light-foreground: #938aa9;
+
+  /* BACKGROUND */
+  --kanagawa-default-background: #1f1f28;
+  --kanagawa-dark-background: #16161d;
+  --kanagawa-folds-background: #2a2a37;
+  --kanagawa-cursorline-background: #363646;
+  --kanagawa-visual-selection-background: #223249;
+  --kanagawa-search-selection-background: #2d4f67;
+
+  /* GIT */
+  --kanagawa-diff-add-background: #2b3328;
+  --kanagawa-diff-change-background: #49443c;
+  --kanagawa-diff-delete-background: #43242b;
+  --kanagawa-diff-line-background: #252535;
+  --kanagawa-git-add: #76946a;
+  --kanagawa-git-delete: #c34043;
+  --kanagawa-git-change: #dca561;
+
+  /* DIAGNOSTICS */
+  --kanagawa-diagnostic-error: #e82424;
+  --kanagawa-diagnostic-warning: #ff9e3b;
+  --kanagawa-diagnostic-info: #6a9589;
+  --kanagawa-diagnostic-hint: #658594;
+
+  /* COMMON */
+  --kanagawa-comment: #727169;
+  --kanagawa-keyword: #957fb8;
+  --kanagawa-function: #7e9cd8;
+  --kanagawa-builtin-function: #7fb4ca;
+  --kanagawa-brackets: #9cabca;
+  --kanagawa-not-used-blue: #a3d4d5;
+  --kanagawa-not-used-yellow: #938056;
+  --kanagawa-type: #7aa89f;
+  --kanagawa-string: #98bb6c;
+  --kanagawa-operator: #c0a36e;
+  --kanagawa-identifier: #e6c384;
+  --kanagawa-number: #d27e99;
+  --kanagawa-builtin-variable: #e46876;
+  --kanagawa-return: #ff5d62;
+  --kanagawa-constant: #ffa066;
+  --kanagawa-deprecated: #717c7c;
+  --kanagawa-meta: #7e8b8b;
+}

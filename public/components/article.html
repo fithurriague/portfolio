@@ -1,0 +1,40 @@
+{{ define "article" }}
+<article class="card">
+  <div class="card-head">
+    <div class="card-head-title">
+      <h3>{{ .Name }}</h3>
+      {{if .IsProprietary}}
+        <img src="dist/assets/icons/lock-25.png" alt="proprietary" />
+      {{end}}
+    </div>
+    <ul>
+      <li><button class="btn">-</button></li>
+      <li><button class="btn">+</button></li>
+      <li><button class="btn">x</button></li>
+    </ul>
+  </div>
+  <div class="card-content">
+    <div class="card-content-head">
+      <div class="card-content-head-img-container">
+        <a href="{{ .ImgURL }}"><img src="{{ .ImgURL }}" alt="150x150" /></a>
+      </div>
+
+      <div class="card-content-head-description">
+        <div class="card-content-head-title">
+          <span>{{ .Role }} in {{ .Company }}</span>
+          <span>{{ .StartDate }} - {{ .EndDate }}</span>
+        </div>
+        <ul class="card-content-head-stack">
+          {{range $key, $value := .Stack }}
+            <li>
+              <a class="btn" href="{{$value}}" target="_blank">{{ $key }}</a>
+            </li>
+          {{end}}
+        </ul>
+      </div>
+    </div>
+
+    <p class="card-content-body">{{ .Description }}</p>
+  </div>
+</article>
+{{ end }}

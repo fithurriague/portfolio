@@ -1,0 +1,96 @@
+/* Background and foreground */
+.hljs {
+  background-color: var(--kanagawa-default-background);
+  color: var(--kanagawa-default-foreground);
+}
+
+/* Keywords */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-variable {
+  color: var(--kanagawa-keyword);
+}
+
+/* Strings */
+.hljs-string,
+.hljs-regexp,
+.hljs-symbol,
+.hljs-link {
+  color: var(--kanagawa-string);
+}
+
+/* Numbers */
+.hljs-number {
+  color: var(--kanagawa-number);
+}
+
+/* Function names and types */
+.hljs-function,
+.hljs-class .hljs-title,
+.hljs-title {
+  color: var(--kanagawa-function);
+}
+
+/* Types */
+.hljs-type {
+  color: var(--kanagawa-type);
+}
+
+/* Comments */
+.hljs-comment,
+.hljs-docstring {
+  color: var(--kanagawa-comment);
+  font-style: italic;
+}
+
+/* Constants */
+.hljs-constant{
+  color: var(--kanagawa-constant);
+}
+
+/* Emphasized elements */
+.hljs-tag {
+  color: var(--kanagawa-text);
+}
+
+/* Built-in, literals and booleans */
+.hljs-name.hljs-built_in,
+.hljs-literal,
+.hljs-boolean {
+  color: var(--kanagawa-builtin-function);
+}
+
+/* Special characters */
+.hljs-meta {
+  color: var(--kanagawa-meta);
+}
+
+/* Func type definitions and func params */
+.hljs-params,
+.hljs-type {
+  color: var(--kanagawa-type);
+}
+
+/* Inline code blocks */
+.hljs-inline {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+/* Code block borders */
+.hljs-code {
+  border-radius: 5px;
+  padding: 10px;
+}
+
+pre {
+  padding: 1rem;
+}
+
+pre,
+code {
+  background-color: #1f1f28;
+  tab-size: 4;
+}

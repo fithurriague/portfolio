@@ -1,0 +1,140 @@
+.card * {
+  color: var(--kanagawa-dark-background);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  translate: -6px -6px;
+  height: 70%;
+  width: 25%;
+  background-color: var(--kanagawa-number);
+  border: .3rem solid #000000;
+  box-shadow: 1rem 1rem 0 #000000;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card-head {
+  display: flex;
+  font-size: 1.2rem;
+  font-weight: 900;
+  background: var(--kanagawa-default-foreground);
+  padding: 0.5rem 1rem;
+  color: var(--kanagawa-dark-background);
+  border-bottom: 3px solid #000000;
+}
+
+.card-head .card-head-title {
+  margin-right: auto;
+}
+
+.card-head .card-head-title h3 {
+  display: inline-block;
+}
+
+.card-head .card-head-title img {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-left: 0.3rem;
+}
+
+.card-head ul {
+  padding: 0;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 0.3rem;
+}
+
+.card-head ul :nth-child(1) button {
+  background-color: var(--kanagawa-not-used-blue);
+}
+
+.card-head ul :nth-child(2) button {
+  background-color: var(--kanagawa-string);
+}
+
+.card-head ul :nth-child(3) button {
+  background-color: var(--kanagawa-return);
+}
+
+.card-head .btn {
+  font-size: 0.8rem;
+}
+
+.card .dotted-bg {
+  --dot-bg: var(--kanagawa-builtin-function);
+  --dot-color: var(--kanagawa-dark-background);
+  --dot-size: 1px;
+  --dot-space: 22px;
+}
+
+.card-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 1.5rem;
+  padding: 1rem 1rem;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--kanagawa-dark-background);
+}
+
+.card-content-head {
+  display: flex;
+}
+
+.card-content-head-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width: 40%;
+  background-color: var(--kanagawa-default-foreground);
+  overflow: hidden;
+  border: 3px solid #000000;
+}
+
+.card-content-head img {
+  height: 155px;
+}
+
+.card-content-head-description {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.card-content-head-title span {
+  display: block;
+}
+
+.card-content-head-title :nth-child(1) {
+  font-size: 1.1rem;
+}
+
+.card-content-head-title :nth-child(2) {
+  font-size: 0.8rem;
+}
+
+.card-content-head-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+}
+
+.card-content-head-stack .btn {
+  padding: .1rem .3rem;
+}
+
+.card-content-head-stack li a {
+  background-color: var(--kanagawa-default-foreground);
+}
+
+.card-content-body {
+  text-overflow: ellipsis;
+}

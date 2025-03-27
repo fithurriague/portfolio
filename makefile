@@ -1,7 +1,13 @@
 all:run
 
+dev:
+	npm run dev
+
+assets:
+	npm run build
+
 run: 
-	npm run build && go run cmd/main.go
+	go run cmd/main.go
 
 test:
 	go test -v cmd/main.go

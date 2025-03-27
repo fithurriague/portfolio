@@ -1,0 +1,51 @@
+:root {
+  --rotationAmt: -3deg;
+}
+
+.home-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.home-presentation {
+  height: 50%;
+  display: grid;
+  grid-template-areas: ". . ." ". text ." ". subtext .";
+  grid-template-rows: 1fr auto 1fr;
+  grid-template-columns: 1fr auto 1fr;
+  margin: 0;
+  overflow: hidden;
+}
+
+.home-presentation h1 {
+  transform: skew(var(--rotationAmt)) rotate(var(--rotationAmt));
+  grid-area: text;
+  margin: 0;
+  padding: 1rem;
+  color: #1d9099;
+  text-shadow: .25rem .25rem 0 #E79C10, -.25rem -.25rem 0 #D53A33;
+  font-family: "Caprasimo", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4rem;
+}
+
+.home-presentation h2 {
+  display: inline-block;
+  transform: skew(var(--rotationAmt)) rotate(var(--rotationAmt));
+  text-align: center;
+  grid-area: subtext;
+  color: #1d9198;
+  text-shadow: .1rem .1rem 0 #E79C10, -.1rem -.1rem 0 #D53A33;
+  font-size: 2rem;
+}
+
+.home-projects {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}

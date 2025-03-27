@@ -3,19 +3,18 @@
 {{end}}
 
 {{define "body"}}
+<div class="home-container dotted-bg">
+  {{ template "navbar" .}}
 
-<h1>{{index . "name"}}</h1>
-<h2>{{index . "rol"}}</h2>
+  <div class="home-presentation">
+    <h1>{{index . "name"}}</h1>
+    <h2>{{index . "role"}}</h2>
+  </div>
 
-<pre><code id="code-block" class="language-go" hx-get="/source/api/server.go" hx-trigger="load" hx-swap="innerHTML"></code></pre>
-
-<!-- HIGHLIGHT CODE AFTER SWAP -->
-<script>
-  document.addEventListener("htmx:afterSwap", function () {
-    const codeBlock = document.getElementById("code-block");
-    codeBlock.style.tabSize = "4";
-    codeBlock.removeAttribute("data-highlighted");
-    hljs.highlightElement(codeBlock);
-  });
-</script>
+  <div class="home-projects">
+    {{ range index . "projects" }}
+      {{ template "article" . }}
+    {{ end }}
+  </div>
+</div>
 {{end}}

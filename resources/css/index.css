@@ -1,155 +1,35 @@
-/* Kanagawa theme for highlight.js using CSS variables */
-:root {
-  /* FOREGROUND */
-  --kanagawa-default-foreground: #dcd7ba;
-  --kanagawa-dark-foreground: #c8c093;
-  --kanagawa-darker-foreground: #54546d;
-  --kanagawa-light-foreground: #938aa9;
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Lora:ital,wght@0,400..700;1,400..700&family=Nabla&family=Press+Start+2P&display=swap');
+@import url('defaults.css');
+@import url('kanagawa.css');
+@import url('home.css');
+@import url('menu.css');
+@import url('card.css');
 
-  /* BACKGROUND */
-  --kanagawa-default-background: #1f1f28;
-  --kanagawa-dark-background: #16161d;
-  --kanagawa-folds-background: #2a2a37;
-  --kanagawa-cursorline-background: #363646;
-  --kanagawa-visual-selection-background: #223249;
-  --kanagawa-search-selection-background: #2d4f67;
-
-  /* GIT */
-  --kanagawa-diff-add-background: #2b3328;
-  --kanagawa-diff-change-background: #49443c;
-  --kanagawa-diff-delete-background: #43242b;
-  --kanagawa-diff-line-background: #252535;
-  --kanagawa-git-add: #76946a;
-  --kanagawa-git-delete: #c34043;
-  --kanagawa-git-change: #dca561;
-
-  /* DIAGNOSTICS */
-  --kanagawa-diagnostic-error: #e82424;
-  --kanagawa-diagnostic-warning: #ff9e3b;
-  --kanagawa-diagnostic-info: #6a9589;
-  --kanagawa-diagnostic-hint: #658594;
-
-  /* COMMON */
-  --kanagawa-comment: #727169;
-  --kanagawa-keyword: #957fb8;
-  --kanagawa-function: #7e9cd8;
-  --kanagawa-builtin-function: #7fb4ca;
-  --kanagawa-brackets: #9cabca;
-  --kanagawa-not-used-blue: #a3d4d5;
-  --kanagawa-not-used-yellow: #938056;
-  --kanagawa-type: #7aa89f;
-  --kanagawa-string: #98bb6c;
-  --kanagawa-operator: #c0a36e;
-  --kanagawa-identifier: #e6c384;
-  --kanagawa-number: #d27e99;
-  --kanagawa-builtin-variable: #e46876;
-  --kanagawa-return: #ff5d62;
-  --kanagawa-constant: #ffa066;
-  --kanagawa-deprecated: #717c7c;
-  --kanagawa-meta: #7e8b8b;
+.dotted-bg {
+  --dot-bg: var(--kanagawa-default-background);
+  --dot-color: var(--kanagawa-default-foreground);
+  --dot-size: 1px;
+  --dot-space: 22px;
+	background:
+		linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+		linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+		var(--dot-color);
 }
 
-/* Background and foreground */
-.hljs {
-  background-color: var(--kanagawa-default-background);
-  color: var(--kanagawa-default-foreground);
+.btn {
+  padding: 0px 5px;
+  border: 1px solid black;
+  box-shadow: 1px 1px 0 #000000;
+  cursor: pointer;
 }
 
-/* Keywords */
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-name,
-.hljs-variable {
-  color: var(--kanagawa-keyword);
+.btn:hover {
+  translate: -0.5px -0.5px;
+  box-shadow: 1.5px 1.5px 0 #000000;
 }
 
-/* Strings */
-.hljs-string,
-.hljs-regexp,
-.hljs-symbol,
-.hljs-link {
-  color: var(--kanagawa-string);
-}
-
-/* Numbers */
-.hljs-number {
-  color: var(--kanagawa-number);
-}
-
-/* Function names and types */
-.hljs-function,
-.hljs-class .hljs-title,
-.hljs-title {
-  color: var(--kanagawa-function);
-}
-
-/* Types */
-.hljs-type {
-  color: var(--kanagawa-type);
-}
-
-/* Comments */
-.hljs-comment,
-.hljs-docstring {
-  color: var(--kanagawa-comment);
-  font-style: italic;
-}
-
-/* Constants */
-.hljs-constant{
-  color: var(--kanagawa-constant);
-}
-
-/* Emphasized elements */
-.hljs-tag {
-  color: var(--kanagawa-text);
-}
-
-/* Built-in, literals and booleans */
-.hljs-name.hljs-built_in,
-.hljs-literal,
-.hljs-boolean {
-  color: var(--kanagawa-builtin-function);
-}
-
-/* Special characters */
-.hljs-meta {
-  color: var(--kanagawa-meta);
-}
-
-/* Func type definitions and func params */
-.hljs-params,
-.hljs-type {
-  color: var(--kanagawa-type);
-}
-
-/* Inline code blocks */
-.hljs-inline {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 2px 4px;
-  border-radius: 3px;
-}
-
-/* Code block borders */
-.hljs-code {
-  border-radius: 5px;
-  padding: 10px;
-}
-
-body {
-  background-color: #ffffff;
-}
-
-h1 {
-  color: orange;
-}
-
-pre {
-  padding: 1rem;
-}
-
-pre,
-code {
-  background-color: #1f1f28;
-  tab-size: 4;
+.btn:focus {
+  border-width: 1px;
+  border-color: black white white black;
+  box-shadow: 1px 1px 0 #000000 inset;
 }
